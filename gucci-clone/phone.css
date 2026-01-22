@@ -1,0 +1,68 @@
+.background-video {
+    object-fit: cover !important;
+    height: 100% !important;
+    width: 100% !important;
+}
+
+.services-video video {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.services {
+    flex-direction: column;
+}
+
+.customerneeds {
+    flex-direction: column;
+    width: 20rem !important;
+}
+
+.forstore {
+    flex-direction: column;
+}
+
+
+
+.image-row {
+    flex-direction: column;
+}
+
+.buttons img {
+    margin-left: 14rem !important;
+}
+
+.nav-links li {
+    display: none;
+}
+
+.navbar {
+    width: 43rem !important;
+}
+
+.collection-overlay {
+    position: absolute;
+    top: 5% !important;
+    left: .5% !important;
+}
+
+.navbar ul {
+    flex-direction: row;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.logo img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.wear img{
+    object-fit: cover;
+}
+.personalwear{
+    flex-direction: column;
+}

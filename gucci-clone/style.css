@@ -1,0 +1,847 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #041e3a;
+    --white: #fff;
+    --font-main: 'Helvetica Neue', sans-serif;
+    --font-alt: "Gucci Sans Pro", Helvetica, Arial, sans-serif;
+}
+
+body {
+    font-family: var(--font-main);
+}
+
+
+.hero-container {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+}
+
+.background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+
+/* NAVBAR */
+.navbar {
+    position: fixed;
+
+    top: 1px;
+    left: 0rem;
+    width: 100%;
+    padding: 13px 30px;
+    display: flex;
+    align-items: center;
+    z-index: 2;
+    gap: 7rem;
+    transition: background-color 0.2s ease 0.12s;
+    background-color: transparent;
+
+}
+
+/* Scroll-triggered styles */
+.navbar.scrolled {
+    background-color: white;
+    padding: 13px 30px;
+}
+
+.navbar.scrolled .nav-links li a {
+    color: #041e3a;
+}
+
+.navbar.scrolled .logo img,
+.navbar.scrolled .buttons img {
+    filter: brightness(0) saturate(100%) invert(12%) sepia(94%) saturate(481%) hue-rotate(175deg) brightness(98%) contrast(88%);
+}
+
+/* Add transition */
+.navbar img,
+.navbar .nav-links li a {
+    transition: all 0.1s ease;
+}
+
+
+
+
+.logo img {
+    padding: 3px 0px;
+    height: 1.6rem;
+    transform: scale(5);
+    cursor: pointer;
+    margin-left: 4rem;
+
+}
+
+
+
+/* Align menu next to logo, all to left */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 18px;
+    margin-bottom: 0.5rem;
+    font-family: "Bree Serif", serif;
+    font-weight: 100;
+
+    text-transform: uppercase;
+    text-transform: capitalize;
+}
+
+.nav-links li {
+    padding: 1px 5px;
+    transition: .2s ease;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: white;
+    font-size: 11px;
+    font-weight: lighter;
+    /* transition: color 0.3s; */
+}
+
+
+
+.buttons img {
+    margin-top: 5px;
+    height: 1.6rem;
+    object-fit: cover;
+    margin-left: 42.5rem;
+    transform: scale(2.8);
+    color: white;
+    cursor: pointer;
+
+}
+
+.navbar:hover {
+    background-color: white;
+
+}
+
+.navbar:hover .nav-links li a {
+    color: #041e3a;
+
+    /* Tailwind's blue-800 */
+}
+
+.navbar:hover .buttons-img {
+    content: url("logo img/blue3.png");
+
+}
+
+.navbar:hover .logo-img {
+    content: url("logo img/blu2.png");
+}
+
+
+
+/* Default white icons */
+.logo img,
+.buttons img {
+    filter: brightness(0) invert(1);
+    transition: filter 0.3s ease;
+}
+
+/* When navbar is hovered, change logo and icons to #041e3a approximation */
+.navbar:hover .logo img,
+.navbar:hover .buttons img {
+    filter: brightness(0) saturate(100%) invert(12%) sepia(94%) saturate(481%) hue-rotate(175deg) brightness(98%) contrast(88%);
+}
+
+.hero-text {
+    position: absolute;
+
+
+    top: 83%;
+    left: 40%;
+
+    text-align: center;
+    color: white;
+    z-index: 2;
+
+    font-family: "Roboto Slab", serif;
+    font-optical-sizing: auto;
+    font-weight: bold;
+    font-style: normal;
+    text-transform: capitalize;
+    padding: 1rem 2rem;
+    cursor: pointer;
+
+
+}
+
+.btn1 {
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: 14px;
+
+    letter-spacing: 2px;
+    color: #000;
+    background-color: #fff;
+    border: none;
+    padding: 9px 12px;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+    font-family: inherit;
+    font-size: .75rem;
+    font-weight: 500;
+    letter-spacing: 0;
+    line-height: 1rem;
+    text-transform: uppercase;
+}
+
+.btn1:hover {
+    transform: scale(0.95);
+    opacity: 1;
+}
+
+
+.btn2 {
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: 14px;
+
+    letter-spacing: 2px;
+    color: #000;
+    background-color: #fff;
+    border: none;
+    padding: 9px 12px;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+    font-family: inherit;
+    font-size: .75rem;
+    font-weight: 500;
+    letter-spacing: 0;
+    line-height: 1rem;
+    text-transform: uppercase;
+}
+
+.btn2:hover {
+    transform: scale(.95);
+    opacity: 1;
+}
+
+.button-group button:not(:last-child) {
+    margin-right: 1rem;
+}
+
+
+.section {
+    padding: 4rem 2rem;
+    text-align: center;
+    background-color: #fff;
+}
+
+.image-row {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-bottom: 1rem;
+}
+
+.image-row img {
+    width: 325px;
+    height: 400px;
+    object-fit: cover;
+    flex-shrink: 0;
+    margin-right: auto;
+    margin-left: auto;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+    transition-delay: .2s;
+}
+
+.image-row img:hover {
+    transition-delay: .2s;
+    transform: scale(.95);
+    opacity: 1;
+}
+
+.h-primary {
+    margin-top: -20px;
+    padding: 75px 0px;
+    font-weight: 200;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    transform: translateY(1%);
+    color: black;
+    font-family: "Gucci Sans Pro", Helvetica, Arial, sans-serif;
+    font-size: 2rem;
+    line-height: 1.8rem;
+    cursor: pointer;
+    transition: 0.2s;
+
+
+}
+
+.h-primary:hover {
+    letter-spacing: .8rem;
+}
+
+
+
+.caption {
+
+    margin-top: 15px;
+    font-size: 15px;
+    font-weight: 500;
+    font-family: "Roboto", Arial, sans-serif;
+    color: #000;
+    text-align: center;
+    letter-spacing: .1rem;
+
+
+}
+
+.collection-overlay {
+    position: absolute;
+    top: 8%;
+    /* adjust vertical positioning */
+    left: 1%;
+    /* adjust horizontal positioning */
+    max-width: 400px;
+    color: white;
+
+    padding: 1.5rem;
+
+    z-index: 3;
+    /* above video */
+    font-family: "Roboto", sans-serif;
+}
+
+.collection-overlay h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: .3rem;
+}
+
+.collection-overlay p {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: .4rem;
+}
+
+
+.collection-overlay .discover-link {
+    display: inline-block;
+    font-weight: bold;
+    font-size: .9rem;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: white;
+    background: transparent;
+    padding: 6px 0px;
+    /* spacing for box */
+    border: 2px solid transparent;
+    position: relative;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+    margin-left: -1px;
+}
+
+/* Single underline */
+.collection-overlay .discover-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    border-bottom: 2px solid white;
+    transition: border-color 0.3s ease;
+}
+
+/* Hover Effect – White Box */
+.collection-overlay .discover-link:hover {
+    background: black;
+    color: white;
+    border: 2px solid black;
+    transform: scale(.99);
+    opacity: 1;
+}
+
+/* Change underline color on hover */
+.collection-overlay .discover-link:hover::after {
+    border-color: black;
+
+}
+
+
+.collection-overlay .discover-link::after {
+    bottom: 0;
+    /* second line slightly below */
+    border-bottom-width: 2px;
+}
+
+/* Hover Effect – White Box */
+.collection-overlay .discover-link:hover {
+    background: black;
+    color: white;
+    border: 2px solid black;
+
+}
+
+.button-group {
+    margin-left: 4px;
+}
+
+.personalwear {
+    display: flex;
+    gap: 16px;
+    padding: 5px 20px;
+}
+
+.wear {
+    flex: 1;
+    max-width: 50%;
+    overflow: hidden;
+    position: relative;
+}
+
+.wear img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    cursor: pointer;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+    transition-delay: .2s;
+
+
+}
+
+.wear img:hover {
+    transition-delay: .2s;
+    transform: scale(.99);
+    opacity: 1;
+}
+
+.overlay {
+    position: absolute;
+    bottom: 50px;
+    left: 35%;
+
+    text-align: center;
+    color: white;
+
+
+}
+
+.overlay h2 {
+    font-size: 2rem;
+    letter-spacing: 3px;
+    margin-bottom: .9rem;
+    font-family: "Gucci Sans Pro", Helvetica, Arial, sans-serif;
+    font-weight: 200;
+
+
+}
+
+.overlay button {
+    display: inline-block;
+    padding: 12px 12px;
+    font-size: 15px;
+    color: white;
+    background: transparent;
+    border: 2px solid white;
+    border-radius: 4px;
+    letter-spacing: 3px;
+    text-decoration: none;
+    /* text-transform: uppercase; */
+    text-transform: capitalize;
+    backdrop-filter: blur(4px);
+    cursor: pointer;
+    margin-right: 15px;
+
+
+
+
+}
+
+
+
+.upperlay {
+    position: absolute;
+    bottom: 94%;
+    left: 38%;
+    text-align: center;
+    color: white;
+
+
+    /* border: 1px solid white; */
+    cursor: pointer;
+
+
+}
+
+.upperlay a {
+    display: inline-block;
+    padding: 6px 20px;
+    font-size: 0.9rem;
+
+    color: white;
+    background: rgba(0, 0, 0, 0.03);
+    /* translucent black */
+    border-radius: 5px;
+
+    letter-spacing: 1px;
+    text-decoration: none;
+    text-transform: uppercase;
+    text-transform: capitalize;
+
+    /* subtle blur */
+    transition: border-color 0.3s ease;
+    text-transform: uppercase;
+}
+
+.upperlay a:hover {
+    background: rgba(0, 0, 0, 0.07);
+    transform: scale(.99);
+    opacity: 1;
+}
+
+.services-section {
+    padding: 3rem 2rem;
+    background-color: #fff;
+    text-align: center;
+}
+
+.services-section h2 {
+    padding: 60px 0px;
+    margin-top: 0px;
+    font-weight: 500;
+    letter-spacing: 0.3rem;
+    text-transform: uppercase;
+    transform: translateY(1%);
+    color: black;
+    font-family: "Gucci Sans Pro", Helvetica, Arial, sans-serif;
+    font-size: 2rem;
+    line-height: 2.1rem;
+    cursor: pointer;
+    transform: translateY(0%);
+    transition: 0.2s;
+
+}
+
+
+
+.services-section h2:hover {
+    letter-spacing: .8rem;
+}
+
+
+.services {
+    display: flex;
+    /* justify-content: center; */
+    /* gap: 2.2rem; */
+
+}
+
+.services-video {
+    flex: 1;
+    /* max-width: 450px; */
+    aspect-ratio: 16 / 16;
+
+
+
+}
+
+.services-video video {
+    width: 27rem;
+    height: 25rem;
+    /* width: 100%;
+    height: 100%; */
+    object-fit: cover;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+    cursor: pointer;
+    transition-delay: .2s;
+}
+.services-video img{
+       width: 27rem;
+    height: 25rem;
+    /* width: 100%;
+    height: 100%; */
+    object-fit: cover;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+    cursor: pointer;
+    transition-delay: .2s;
+}
+.services-video img:hover{
+    transition-delay: .2s;
+    transform: scale(.97);
+    opacity: 1;
+}
+
+.services-video video:hover {
+    transition-delay: .2s;
+    transform: scale(.97);
+    opacity: 1;
+
+}
+
+.video-text {
+    max-width: 480px;
+    line-height: 1.7;
+}
+
+.video-text h3 {
+    font-size: .9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+    margin-top: 2rem;
+}
+
+.video-text p {
+    font-size: 0.87rem;
+    font-weight: lighter;
+
+    color: #111;
+    /* margin-bottom: 25px; */
+}
+
+.video-text a {
+
+    font-weight: normal;
+    color: black;
+    text-decoration: underline;
+    text-underline-offset: 5px;
+    text-decoration-thickness: 0px;
+
+}
+
+.navbar.scrolled {
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.customerneeds {
+    background-color: black;
+   
+    margin-top: -3px;
+    padding: 50px 50px;
+
+    width: 95rem;
+}
+
+.forstore {
+    display: flex;
+    gap: 16.5rem;
+   
+}
+
+.customerservices {
+    margin-left: 2.5rem;
+}
+
+.customerservices h5 {
+
+    outline-offset: -3px;
+    font-size: .75rem;
+    font-weight: 700;
+    letter-spacing: -.05em;
+    line-height: 1rem;
+    text-transform: uppercase;
+    color: #fff;
+
+    opacity: .5;
+    position: absolute;
+    cursor: pointer;
+}
+
+.customerservices li {
+
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-thickness: 1px;
+    list-style: none;
+    font-weight: 500;
+    text-transform: capitalize;
+    font-size: .82rem;
+    font-weight: 500;
+    letter-spacing: -.03em;
+    line-height: 2rem;
+    color: #fff;
+    cursor: pointer;
+
+}
+
+
+
+
+.h-secondary {
+    margin-bottom: 20px;
+
+}
+
+.about-company {
+    margin-top: -6.1px;
+
+}
+
+.about-company h5 {
+    outline-offset: -3px;
+    font-size: .75rem;
+    font-weight: 700;
+    letter-spacing: -.05em;
+    line-height: 1rem;
+    text-transform: uppercase;
+    color: #fff;
+
+    opacity: .5;
+    cursor: pointer;
+    position: absolute;
+
+}
+
+.about-company li {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-thickness: 1px;
+    list-style: none;
+    font-weight: 500;
+    text-transform: capitalize;
+    font-size: .82rem;
+    font-weight: 500;
+    letter-spacing: -.03em;
+    line-height: 2rem;
+    color: #fff;
+    cursor: pointer;
+    white-space: nowrap;
+
+}
+
+.footer-section {
+    color: white;
+    font-family: "Helvetica Neue", sans-serif;
+    padding: 0rem 0rem;
+   
+    cursor: pointer;
+}
+
+.footer-section label {
+    display: block;
+    margin-bottom: 1rem;
+    color: #aaa;
+    outline-offset: -3px;
+    font-size: .72rem;
+    font-weight: 700;
+    letter-spacing: -.05em;
+    line-height: 1rem;
+    text-transform: uppercase;
+    color: #fff;
+
+    opacity: .5;
+    cursor: pointer;
+}
+
+.footer-section p {
+    font-weight: 500;
+    text-transform: capitalize;
+    font-size: .82rem;
+    font-weight: 500;
+    letter-spacing: -.03em;
+    line-height: 1.3rem;
+    color: #fff;
+    margin-bottom: 1.5rem;
+    cursor: pointer;
+}
+
+.footer-section a {
+    color: white;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.input-row {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #555;
+    padding: 0.5rem 0;
+    margin-bottom: 2rem;
+}
+
+.input-row input {
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 1rem;
+    flex: 1;
+    outline: none;
+}
+
+.input-row .arrow {
+    font-size: 1.2rem;
+    color: white;
+    cursor: pointer;
+}
+
+.zentraus {
+
+    color: #fff;
+    margin-top: 6rem;
+
+    cursor: pointer;
+}
+
+.zentraus h5 {
+    outline-offset: -3px;
+    font-size: .75rem;
+    font-weight: 700;
+    letter-spacing: -.05em;
+    line-height: 1rem;
+    text-transform: uppercase;
+    color: #fff;
+
+    opacity: .5;
+    cursor: pointer;
+    margin-top: -28px;
+
+}
+
+.zentraus li {
+
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.socials {
+   margin-top: 50px;
+}
+
+.socials h5 {
+    outline-offset: -3px;
+    font-size: .75rem;
+    font-weight: 700;
+    letter-spacing: -.05em;
+    line-height: 1rem;
+    text-transform: uppercase;
+    color: #fff;
+
+    opacity: .5;
+    cursor: pointer;
+}
+
+.socials img {
+       margin-left: 35px;
+    transform: scale(1.6);
+    filter: invert(100%) brightness(1) contrast(100%);
+    width: 117px;
+    cursor: pointer;
+}
+
+.footer-section {
+    display: flex;
+    flex-direction: column;
+}
