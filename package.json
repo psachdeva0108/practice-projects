@@ -17,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/psachdeva0108/practice-projects/issues"
   },
-  "homepage": "https://github.com/psachdeva0108/practice-projects#readme"
+  "homepage": "https://github.com/psachdeva0108/practice-projects#readme",
+  "dependencies": {
+    "react-router-dom": "^7.18.2"
+  }
 }
