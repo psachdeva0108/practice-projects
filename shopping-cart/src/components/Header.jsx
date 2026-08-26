@@ -1,5 +1,5 @@
 import { useRef, useContext } from 'react';
-
+import {Typography} from '@mui/material'
 import CartModal from './CartModal.jsx';
 import { CartContext } from '../store/shopping-cart-context.jsx';
 
@@ -30,7 +30,8 @@ export default function Header() {
       <header id="main-header">
         <div id="main-title">
           <img src="logo.png" alt="Elegant model" />
-          <h1>Elegant Context</h1>
+          <Typography variant = 'h5'> Elegant Context</Typography>
+         
         </div>
         <p>
           <button onClick={handleOpenCartClick}>Cart ({cartQuantity})</button>
